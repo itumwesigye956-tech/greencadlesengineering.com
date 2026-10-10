@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Candles Engineering Company Limited | Master Metal Fabrication</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        industrial: {
+                            900: '#0a0d14',
+                            800: '#121824',
+                            700: '#1b2333',
+                            600: '#28354c',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for professional industrial icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0a0d14;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        /* Light Mode Overrides */
+        body.light-mode {
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        body.light-mode header {
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            border-color: #e2e8f0 !important;
+        }
+        body.light-mode .bg-industrial-950 {
+            background-color: #ffffff !important;
+            color: #0f172a !important;
+            border-color: #e2e8f0 !important;
+        }
+        body.light-mode .bg-industrial-900 {
+            background-color: #f1f5f9 !important;
+            color: #0f172a !important;
+            border-color: #e2e8f0 !important;
+        }
+        body.light-mode .bg-industrial-800, body.light-mode .bg-industrial-700 {
+            background-color: #e2e8f0 !important;
+            color: #0f172a !important;
+        }
+        body.light-mode input, body.light-mode select, body.light-mode textarea {
+            background-color: #ffffff !important;
+            color: #0f172a !important;
+            border-color: #cbd5e1 !important;
+        }
+        body.light-mode .text-gray-300, body.light-mode .text-gray-400 {
+            color: #475569 !important;
+        }
+        body.light-mode footer {
+            background-color: #f1f5f9 !important;
+            border-color: #e2e8f0 !important;
+        }
+
+        .glow-gold {
+            box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3);
+        }
+        .glow-gold-lg {
+            box-shadow: 0 0 40px -10px rgba(245, 158, 11, 0.4);
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(245, 158, 11, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0d14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #28354c;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+    </style>
+</head>
+<body class="bg-industrial-900 text-gray-100 min-h-screen selection:bg-gold-500 selection:text-black">
+
+    <header class="sticky top-0 z-50 bg-industrial-950/90 backdrop-blur-md border-b border-industrial-700 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center glow-gold text-industrial-900 font-black text-xl shadow-lg">
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-black tracking-wider uppercase bg-gradient-to-r from-white via-gray-200 to-gold-400 bg-clip-text text-transparent">Green Candles</span>
+                    <span class="block text-xs font-semibold text-gold-500 tracking-widest uppercase">Engineering Co. Ltd</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="#catalog" class="hover:text-gold-400 transition-colors">Products Catalog</a>
+                <a href="#showcase" class="hover:text-gold-400 transition-colors">Recent Showcase</a>
+                <a href="#wizard" class="hover:text-gold-400 transition-colors">Quote Estimator</a>
+                <a href="#security" class="hover:text-gold-400 transition-colors">Security & QA</a>
+                <a href="#careers" class="hover:text-gold-400 transition-colors">Careers</a>
+                <a href="#about" class="hover:text-gold-400 transition-colors">About Founder</a>
+                <a href="#contact" class="hover:text-gold-400 transition-colors">Contact Hub</a>
+                
+                <!-- Dark/Light Mode Toggle Button -->
+                <button onclick="toggleTheme()" class="px-3 py-1.5 rounded-lg bg-industrial-800 border border-gold-500/40 text-gold-400 hover:bg-gold-500 hover:text-industrial-900 transition-all font-semibold text-xs flex items-center space-x-1.5" title="Toggle Dark/Light Mode">
+                    <i id="theme-icon" class="fa-solid fa-sun"></i>
+                    <span id="theme-text">Mode</span>
+                </button>
+
+                <button onclick="openAdminModal()" class="px-3 py-1.5 rounded-lg bg-industrial-800 border border-gold-500/40 text-gold-400 hover:bg-gold-500 hover:text-industrial-900 transition-all font-semibold text-xs flex items-center space-x-1.5">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Team Admin</span>
+                </button>
+            </nav>
+
+            <div class="flex items-center space-x-2 md:hidden">
+                <button onclick="toggleTheme()" class="p-2.5 rounded-xl bg-industrial-800 border border-gold-500/40 text-gold-400 text-sm">
+                    <i id="theme-icon-mobile" class="fa-solid fa-sun"></i>
+                </button>
+                <button onclick="openAdminModal()" class="p-2.5 rounded-xl bg-industrial-800 border border-gold-500/40 text-gold-400 text-sm">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </button>
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2.5 rounded-xl bg-industrial-800 text-gray-300 hover:text-white">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-industrial-950 border-b border-industrial-700 px-6 py-4 space-y-3">
+            <a href="#catalog" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-gold-400 font-medium">Products Catalog</a>
+            <a href="#showcase" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-gold-400 font-medium">Recent Showcase</a>
+            <a href="#wizard" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-gold-400 font-medium">Quote Estimator</a>
+            <a href="#security" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-gold-400 font-medium">Security & QA</a>
+            <a href="#careers" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-gold-400 font-medium">Careers</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-gold-400 font-medium">About Founder</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-gold-400 font-medium">Contact Hub</a>
+        </div>
+    </header>
+
+    <section class="relative overflow-hidden bg-grid-pattern py-20 lg:py-32 border-b border-industrial-800">
+        <div class="absolute inset-0 bg-gradient-to-b from-industrial-900/60 via-industrial-900/90 to-industrial-900 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold tracking-wide uppercase glow-gold">
+                        <i class="fa-solid fa-certificate"></i>
+                        <span>Founded by Govt Trader • Heavy-Duty Metal Fabrication</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-none">
+                        Uncompromising Strength. <span class="bg-gradient-to-r from-gold-400 via-amber-500 to-yellow-400 bg-clip-text text-transparent">Master Metal Craft.</span>
+                    </h1>
+                    <p class="text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Welcome to <strong class="text-white">Green Candles Engineering Company Limited</strong>. We engineer impenetrable security and breathtaking aesthetics through master-grade Windows, Doors, Railings, Gates, and Burglar Proofing (Buglars) tailored to perfection.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+                        <a href="#wizard" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-industrial-900 font-bold text-base hover:from-gold-400 hover:to-gold-500 transition-all shadow-lg glow-gold text-center flex items-center justify-center space-x-2">
+                            <span>Calculate Custom Quote</span>
+                            <i class="fa-solid fa-calculator"></i>
+                        </a>
+                        <a href="https://wa.me/256779525875?text=Hello%20Green%20Candles%20Engineering,%20I%20would%20like%20to%20inquire%20about..." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-industrial-800 hover:bg-industrial-700 border border-gold-500/40 text-white font-bold text-base transition-all text-center flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+                            <span>Chat on WhatsApp </span>
+                        </a>
+                    </div>
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-industrial-700/60 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <span class="block text-2xl font-black text-gold-400">100%</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Heavy-Duty Steel</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-black text-gold-400">Custom</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Architectural Designs</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-black text-gold-400">24/7</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Client Support</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-2xl overflow-hidden border-2 border-gold-500/30 glow-gold-lg bg-industrial-800 p-2">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Industrial Metal Fabrication" class="rounded-xl object-cover w-full h-[420px] filter brightness-90 contrast-110">
+                        <div class="absolute inset-x-6 bottom-6 p-4 rounded-xl bg-industrial-950/85 backdrop-blur-md border border-industrial-700 flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-gold-500/20 border border-gold-500/50 flex items-center justify-center text-gold-400 text-xl flex-shrink-0">
+                                <i class="fa-solid fa-shield-cat"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Tamper-Proof Engineering</h4>
+                                <p class="text-xs text-gray-400">Reinforced steel frames with anti-breakout welding techniques.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Pictures Showcase Section (Admin Managed) -->
+    <section id="showcase" class="py-20 bg-industrial-950 border-b border-industrial-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-gold-500 text-xs font-bold uppercase tracking-widest bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">Live Gallery Showcase</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 tracking-tight">Recent Product Masterpieces</h2>
+                    <p class="text-gray-400 mt-2 text-sm">Explore our latest finished fabrication projects. If you like any of these designs, you can order the exact style directly.</p>
+                </div>
+            </div>
+
+            <div id="public-showcase-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dynamically populated from Admin Gallery Manager localStorage -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" class="py-20 bg-industrial-900 border-b border-industrial-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-500 text-xs font-bold uppercase tracking-widest bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">Join Our Technical Team</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 tracking-tight">Careers & Graduate Traineeships</h2>
+                <p class="text-gray-400 mt-3 text-base">At Green Candles Engineering Company Limited[cite: 3], we are always looking for passionate electrical engineers, master welders, and technical sales experts to join our growing workshop and field teams in Uganda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="p-8 rounded-2xl bg-industrial-950 border border-industrial-700 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl mb-4">
+                            <i class="fa-solid fa-hard-hat"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Master Welder & Fabricator</h3>
+                        <p class="text-gray-400 text-sm mb-4">Experienced in heavy-gauge steel welding, MIG/TIG techniques, and reading architectural blueprints.</p>
+                        <span class="inline-block px-3 py-1 rounded bg-gold-500/10 text-gold-400 text-xs font-bold mb-6">Full-Time • Kampala / Field Sites</span>
+                    </div>
+                    <a href="#career-form" onclick="selectCareerRole('Master Welder & Fabricator')" class="w-full py-3 rounded-xl bg-industrial-900 hover:bg-gold-500 hover:text-industrial-900 border border-gold-500/40 text-gold-400 font-bold text-xs text-center transition-all">Apply For This Role</a>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-industrial-950 border border-industrial-700 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl mb-4">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Graduate Electrical Engineer</h3>
+                        <p class="text-gray-400 text-sm mb-4">Bachelor's degree in Electrical Engineering with passion for power lines, control panels, and electrical installations.</p>
+                        <span class="inline-block px-3 py-1 rounded bg-gold-500/10 text-gold-400 text-xs font-bold mb-6">Graduate Program • Uganda</span>
+                    </div>
+                    <a href="#career-form" onclick="selectCareerRole('Graduate Electrical Engineer')" class="w-full py-3 rounded-xl bg-industrial-900 hover:bg-gold-500 hover:text-industrial-900 border border-gold-500/40 text-gold-400 font-bold text-xs text-center transition-all">Apply For This Role</a>
+                </div>
+            </div>
+
+            <div id="career-form" class="p-8 sm:p-10 rounded-3xl bg-industrial-950 border-2 border-gold-500/30 glow-gold shadow-2xl">
+                <h3 class="text-xl font-bold text-white mb-2">Submit Your Job Application</h3>
+                <p class="text-xs text-gray-400 mb-6">Fill out your details below and our HR / Engineering desk will review your credentials.</p>
+                
+                <form onsubmit="handleCareerSubmission(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Full Name *</label>
+                            <input type="text" id="applicant-name" required placeholder="e.g. Tumwesigye Isaac" class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Phone / WhatsApp *</label>
+                            <input type="tel" id="applicant-phone" required placeholder="+256..." class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Position Applied For *</label>
+                            <input type="text" id="applicant-position" required placeholder="e.g. Graduate Electrical Engineer" class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Email Address *</label>
+                            <input type="email" id="applicant-email" required placeholder="name@example.com" class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Cover Note / Experience Summary *</label>
+                        <textarea id="applicant-cover" rows="4" required placeholder="Briefly describe your degree, internships, or engineering skills..." class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-industrial-900 font-extrabold hover:from-gold-400 hover:to-gold-500 transition-all shadow-lg glow-gold">
+                        Submit Job Application to Engineering Desk
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-industrial-950 border-b border-industrial-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-500 text-xs font-bold uppercase tracking-widest bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">Those Green Candles</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 tracking-tight">The Vision & Engineering Mastery</h2>
+                <p class="text-gray-400 mt-3 text-base">Founded by <strong class="text-gold-400">Govt Trader</strong>, Green Candles Engineering Company Limited was born from a singular mission: to provide the ultimate blend of luxurious metal aesthetics and absolute structural security for residential, commercial, and industrial properties.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-industrial-900 border border-industrial-700 hover:border-gold-500/50 transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Elite Technical Team</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Our master welders, structural designers, and fabrication artisans possess decades of combined experience executing complex architectural blueprints with surgical precision.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-industrial-900 border border-industrial-700 hover:border-gold-500/50 transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Uncompromising Security</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Every window grill, gate, and security bugler is built with heavy-gauge steel resistant to forced entry, cutting torches, and extreme physical pressure.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-industrial-900 border border-industrial-700 hover:border-gold-500/50 transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Custom Design Flexibility</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">If you can imagine it, Green Candles can fabricate it. From ornate Victorian scrollwork to sleek minimalist modern geometry, client desire is our law.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalog" class="py-20 bg-industrial-900 border-b border-industrial-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-gold-500 text-xs font-bold uppercase tracking-widest bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">Catalog & Creations</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 tracking-tight">Our Master Fabrication Line</h2>
+                </div>
+                <div class="mt-4 md:mt-0 flex flex-wrap gap-2">
+                    <button onclick="filterCatalog('all')" class="catalog-btn px-4 py-2 rounded-xl text-xs font-bold bg-gold-500 text-industrial-900 transition-all">All Products</button>
+                    <button onclick="filterCatalog('gates')" class="catalog-btn px-4 py-2 rounded-xl text-xs font-bold bg-industrial-950 text-gray-300 hover:text-white transition-all">Gates</button>
+                    <button onclick="filterCatalog('doors')" class="catalog-btn px-4 py-2 rounded-xl text-xs font-bold bg-industrial-950 text-gray-300 hover:text-white transition-all">Doors</button>
+                    <button onclick="filterCatalog('windows')" class="catalog-btn px-4 py-2 rounded-xl text-xs font-bold bg-industrial-950 text-gray-300 hover:text-white transition-all">Windows</button>
+                    <button onclick="filterCatalog('railings')" class="catalog-btn px-4 py-2 rounded-xl text-xs font-bold bg-industrial-950 text-gray-300 hover:text-white transition-all">Railings</button>
+                    <button onclick="filterCatalog('buglers')" class="catalog-btn px-4 py-2 rounded-xl text-xs font-bold bg-industrial-950 text-gray-300 hover:text-white transition-all">Burglar Proofing</button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Item 1: Gates -->
+                <div class="product-card group rounded-2xl bg-industrial-950 border border-industrial-700 overflow-hidden hover:border-gold-500/60 transition-all flex flex-col" data-category="gates">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558441117-49d10a9bb5f5?auto=format&fit=crop&w=800&q=80" alt="Motorized & Manual Security Gates" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-industrial-900/80 backdrop-blur-md px-3 py-1 rounded-lg border border-gold-500/30 text-gold-400 text-xs font-bold">
+                            Heavy Duty Gate
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Automated & Manual Security Gates</h3>
+                            <p class="text-gray-400 text-sm mb-4">Crafted from thick structural steel tubing with laser-cut geometric or classic forged motifs. Anti-rust primed and powder-coated.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-md bg-industrial-900 text-gray-300 text-xs">Gauge: 3mm - 6mm</span>
+                                <span class="px-2.5 py-1 rounded-md bg-industrial-900 text-gray-300 text-xs">Anti-Climb Design</span>
+                            </div>
+                        </div>
+                        <button onclick="selectProductForWizard('Gates', 850000)" class="w-full py-3 rounded-xl bg-industrial-900 hover:bg-gold-500 hover:text-industrial-900 border border-gold-500/40 text-gold-400 font-bold text-sm transition-all flex items-center justify-center space-x-2">
+                            <span>Customize & Order</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 2: Doors -->
+                <div class="product-card group rounded-2xl bg-industrial-950 border border-industrial-700 overflow-hidden hover:border-gold-500/60 transition-all flex flex-col" data-category="doors">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Armored Steel Doors" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-industrial-900/80 backdrop-blur-md px-3 py-1 rounded-lg border border-gold-500/30 text-gold-400 text-xs font-bold">
+                            Armored Door
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Armored Security Entry Doors</h3>
+                            <p class="text-gray-400 text-sm mb-4">Multi-point locking mechanisms encased in heavy steel panels. Combines executive luxury with absolute bullet and forced-entry resistance.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-md bg-industrial-900 text-gray-300 text-xs">Multi-Point Lock</span>
+                                <span class="px-2.5 py-1 rounded-md bg-industrial-900 text-gray-300 text-xs">Sound & Fire Rated</span>
+                            </div>
+                        </div>
+                        <button onclick="selectProductForWizard('Doors', 650000)" class="w-full py-3 rounded-xl bg-industrial-900 hover:bg-gold-500 hover:text-industrial-900 border border-gold-500/40 text-gold-400 font-bold text-sm transition-all flex items-center justify-center space-x-2">
+                            <span>Customize & Order</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 3: Windows -->
+                <div class="product-card group rounded-2xl bg-industrial-950 border border-industrial-700 overflow-hidden hover:border-gold-500/60 transition-all flex flex-col" data-category="windows">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Steel Casement Windows" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-industrial-900/80 backdrop-blur-md px-3 py-1 rounded-lg border border-gold-500/30 text-gold-400 text-xs font-bold">
+                            Casement Window
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Reinforced Steel Casement Windows</h3>
+                            <p class="text-gray-400 text-sm mb-4">Elegant slim-profile steel frames engineered for maximum natural light ventilation coupled with robust integrated burglar bars.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-md bg-industrial-900 text-gray-300 text-xs">Tempered Glass Option</span>
+                                <span class="px-2.5 py-1 rounded-md bg-industrial-900 text-gray-300 text-xs">Weather Sealed</span>
+                            </div>
+                        </div>
+                        <button onclick="selectProductForWizard('Windows', 450000)" class="w-full py-3 rounded-xl bg-industrial-900 hover:bg-gold-500 hover:text-industrial-900 border border-gold-500/40 text-gold-400 font-bold text-sm transition-all flex items-center justify-center space-x-2">
+                            <span>Customize & Order</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 4: Railings -->
+                <div class="product-card group rounded-2xl bg-industrial-950 border border-industrial-700 overflow-hidden hover:border-gold-500/60 transition-all flex flex-col" data-category="railings">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f86f8?auto=format&fit=crop&w=800&q=80" alt="Staircase and Balcony Railings" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-industrial-900/80 backdrop-blur-md px-3 py-1 rounded-lg border border-gold-500/30 text-gold-400 text-xs font-bold">
+                            Balcony & Stair Railing
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Architectural Staircase & Balcony Railings</h3>
+                            <p class="text-gray-400 text-sm mb-4">Stunning stainless steel or black forged iron railings designed for interior stairwells, balconies, and terraces with flawless safety compliance.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-md bg-industrial-900 text-gray-300 text-xs">Matte / Gloss Finish</span>
+                                <span class="px-2.5 py-1 rounded-md bg-industrial-900 text-gray-300 text-xs">Rigid Anchor Mounts</span>
+                            </div>
+                        </div>
+                        <button onclick="selectProductForWizard('Railings', 300000)" class="w-full py-3 rounded-xl bg-industrial-900 hover:bg-gold-500 hover:text-industrial-900 border border-gold-500/40 text-gold-400 font-bold text-sm transition-all flex items-center justify-center space-x-2">
+                            <span>Customize & Order</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 5: Burglar Proofing ('Buglers') -->
+                <div class="product-card group rounded-2xl bg-industrial-950 border border-industrial-700 overflow-hidden hover:border-gold-500/60 transition-all flex flex-col" data-category="buglers">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Burglar Proofing Buglers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-industrial-900/80 backdrop-blur-md px-3 py-1 rounded-lg border border-gold-500/30 text-gold-400 text-xs font-bold">
+                            Security Buglers
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Custom Burglar Proofing ('Buglers')</h3>
+                            <p class="text-gray-400 text-sm mb-4">Custom-welded internal and external security buglers in any form or artistic design that satisfies your exact security and aesthetic desires.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-md bg-industrial-900 text-gray-300 text-xs">Solid Square Bar</span>
+                                <span class="px-2.5 py-1 rounded-md bg-industrial-900 text-gray-300 text-xs">Any Custom Pattern</span>
+                            </div>
+                        </div>
+                        <button onclick="selectProductForWizard('Burglar Proofing', 250000)" class="w-full py-3 rounded-xl bg-industrial-900 hover:bg-gold-500 hover:text-industrial-900 border border-gold-500/40 text-gold-400 font-bold text-sm transition-all flex items-center justify-center space-x-2">
+                            <span>Customize & Order</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 6: Custom Fabrications -->
+                <div class="product-card group rounded-2xl bg-industrial-950 border border-industrial-700 overflow-hidden hover:border-gold-500/60 transition-all flex flex-col" data-category="gates">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Heavy Structural Steel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-industrial-900/80 backdrop-blur-md px-3 py-1 rounded-lg border border-gold-500/30 text-gold-400 text-xs font-bold">
+                            Custom Project
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Heavy Structural Steel & Industrial Sheds</h3>
+                            <p class="text-gray-400 text-sm mb-4">Industrial-scale fabrication for warehouses, commercial buildings, water tanks towers, and custom architectural metalwork.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded-md bg-industrial-900 text-gray-300 text-xs">I-Beams & Channels</span>
+                                <span class="px-2.5 py-1 rounded-md bg-industrial-900 text-gray-300 text-xs">Engineered Blueprint</span>
+                            </div>
+                        </div>
+                        <button onclick="selectProductForWizard('Custom Structural Steel', 1200000)" class="w-full py-3 rounded-xl bg-industrial-900 hover:bg-gold-500 hover:text-industrial-900 border border-gold-500/40 text-gold-400 font-bold text-sm transition-all flex items-center justify-center space-x-2">
+                            <span>Customize & Order</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="wizard" class="py-20 bg-industrial-950 border-b border-industrial-800 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-gold-500 text-xs font-bold uppercase tracking-widest bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">Interactive Estimator</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 tracking-tight">Custom Quote & Order Wizard</h2>
+                <p class="text-gray-400 mt-2 text-sm">Configure your exact dimensions, material gauge, and finish style for an instant estimated quotation and direct order dispatch to the engineering team.</p>
+            </div>
+
+            <div class="rounded-3xl bg-industrial-900 border-2 border-gold-500/30 glow-gold p-6 sm:p-10 shadow-2xl">
+                <form id="quote-form" onsubmit="handleOrderSubmission(event)" class="space-y-8">
+                    <!-- Step 1: Select Product -->
+                    <div class="space-y-3">
+                        <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider">1. Select Product Category</label>
+                        <select id="wizard-product" onchange="calculateEstimate()" class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors">
+                            <option value="Gates">Security Gates (Manual/Automated)</option>
+                            <option value="Doors">Armored Security Doors</option>
+                            <option value="Windows">Steel Casement Windows</option>
+                            <option value="Railings">Staircase & Balcony Railings</option>
+                            <option value="Burglar Proofing" selected>Burglar Proofing ('Buglers')</option>
+                            <option value="Custom Structural Steel">Heavy Structural Steel Fabrication</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 2: Dimensions -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider">Approx. Width (Meters)</label>
+                            <input type="number" id="wizard-width" min="0.5" max="50" step="0.1" value="2.0" oninput="calculateEstimate()" class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider">Approx. Height (Meters)</label>
+                            <input type="number" id="wizard-height" min="0.5" max="30" step="0.1" value="2.0" oninput="calculateEstimate()" class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors">
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Material Gauge & Finish -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider">Material Gauge / Strength</label>
+                            <select id="wizard-gauge" onchange="calculateEstimate()" class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors">
+                                <option value="1.2">Standard Heavy-Duty (2mm)</option>
+                                <option value="1.5" selected>Commercial Armor Grade (3mm)</option>
+                                <option value="2.0">Maximum Security Fortress (5mm+)</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider">Finish & Coating</label>
+                            <select id="wizard-finish" onchange="calculateEstimate()" class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors">
+                                <option value="1.0">Anti-Rust Primer Only</option>
+                                <option value="1.15" selected>Matte Black Powder Coat</option>
+                                <option value="1.3">Industrial Gold & Bronze Antique Accent</option>
+                                <option value="1.25">Glossy Metallic Finish</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Custom Design Notes -->
+                    <div class="space-y-2">
+                        <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider">Custom Design Description / Style Preferences</label>
+                        <textarea id="wizard-notes" rows="3" placeholder="Describe any specific pattern (e.g., floral scrollwork, modern minimalist vertical louvers, specific locking brand)..." class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors"></textarea>
+                    </div>
+
+                    <!-- Contact Details for Order Submission -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-industrial-800">
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider">Your Full Name *</label>
+                            <input type="text" id="client-name" required placeholder="e.g. Sarah Namubiru" class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider">Phone / WhatsApp Number *</label>
+                            <input type="tel" id="client-phone" required placeholder="e.g. +256 700 000000" class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors">
+                        </div>
+                    </div>
+
+                    <!-- Instant Pricing Display Box -->
+                    <div class="p-6 rounded-2xl bg-industrial-950 border border-gold-500/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div>
+                            <span class="text-xs uppercase tracking-wider text-gray-400 block font-semibold">Estimated Price Calculation</span>
+                            <div class="text-3xl font-black text-gold-400 mt-1" id="estimated-price-display">UGX 850,000</div>
+                            <span class="text-xs text-gray-500 block mt-1">*Final price confirmed after engineering site measurement.</span>
+                        </div>
+                        <button type="submit" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-industrial-900 font-extrabold hover:from-gold-400 hover:to-gold-500 transition-all shadow-lg glow-gold flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Submit Order to Engineering</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="security" class="py-20 bg-industrial-900 border-b border-industrial-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-500 text-xs font-bold uppercase tracking-widest bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">Security & Quality Assurance</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 tracking-tight">Built Tough. Certified Secure.</h2>
+                <p class="text-gray-400 mt-3 text-base">At Green Candles Engineering[cite: 3], physical security meets robust digital infrastructure. Every order and client communication is handled with rigorous safety protocols.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl bg-industrial-950 border border-industrial-800">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl mb-4">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Tamper-Proof Welds</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Deep penetration MIG/TIG welding prevents pry-bar separation and structural joint buckling under stress.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-industrial-950 border border-industrial-800">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl mb-4">
+                        <i class="fa-solid fa-code-shield"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Secure Client Data</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">All quote form inputs undergo strict client-side sanitization and XSS neutralization prior to processing.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-industrial-950 border border-industrial-800">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl mb-4">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Anti-Corrosion Primer</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Multi-stage rust inhibitor priming ensures decades of resilience against tropical moisture and weather elements.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-industrial-950 border border-industrial-800">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl mb-4">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Guaranteed Satisfaction</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Led by Govt Trader, our technical team personally oversees installation until your security and design desires are fully satisfied.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-industrial-950 border-b border-industrial-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-gold-500 text-xs font-bold uppercase tracking-widest bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">Direct Communication Hub</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Connect with Green Candles Engineering</h2>
+                    <p class="text-gray-300 text-base leading-relaxed">
+                        Ready to upgrade your home or commercial building with world-class windows, doors, railings, gates, or custom burglar proofing? Reach out directly to our engineering desk via call or WhatsApp.
+                    </p>
+                    <div class="space-y-4 pt-2">
+                        <!-- Phone Card 1 -->
+                        <a href="tel:+256757053424" class="p-4 rounded-xl bg-industrial-900 border border-industrial-700 hover:border-gold-500/50 flex items-center justify-between transition-all group">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-lg bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400 text-xl">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-gray-400 uppercase tracking-wider block">Direct Voice Line</span>
+                                    <span class="text-lg font-extrabold text-white group-hover:text-gold-400 transition-colors">+256 757 053424</span>
+                                </div>
+                            </div>
+                            <span class="px-4 py-2 rounded-lg bg-gold-500 text-industrial-900 font-bold text-xs">Call Now</span>
+                        </a>
+
+                        <!-- Phone Card 2 (WhatsApp & Calls) -->
+                        <a href="https://wa.me/256779525875?text=Hello%20Govt%20Trader,%20I%20want%20to%20discuss%20a%20metal%20fabrication%20project..." target="_blank" class="p-4 rounded-xl bg-industrial-900 border border-industrial-700 hover:border-emerald-500/50 flex items-center justify-between transition-all group">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-xl">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-gray-400 uppercase tracking-wider block">WhatsApp & Voice Line</span>
+                                    <span class="text-lg font-extrabold text-white group-hover:text-emerald-400 transition-colors">+256 779 525875</span>
+                                </div>
+                            </div>
+                            <span class="px-4 py-2 rounded-lg bg-emerald-500 text-industrial-900 font-bold text-xs">Open WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="p-8 rounded-3xl bg-industrial-900 border border-industrial-700 space-y-6">
+                    <h3 class="text-xl font-bold text-white">Send Direct Message</h3>
+                    <form onsubmit="handleDirectMessage(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Your Name</label>
+                            <input type="text" id="dm-name" required placeholder="Full Name" class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Phone Number</label>
+                            <input type="tel" id="dm-phone" required placeholder="+256..." class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Message / Inquiry</label>
+                            <textarea id="dm-msg" rows="3" required placeholder="What would you like us to fabricate?" class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-industrial-900 font-bold text-sm transition-all shadow-md">
+                            Send Inquiry to Engineering Desk
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Modal with Secure Passcode Authentication & Gallery Manager -->
+    <div id="admin-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-industrial-900 border-2 border-gold-500/50 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl relative">
+            <div class="flex items-center justify-between pb-6 border-b border-industrial-800">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Team Admin Portal</h3>
+                        <p class="text-xs text-gray-400">Restricted Access • Managed exclusively by Govt Trader</p>
+                    </div>
+                </div>
+                <button onclick="closeAdminModal()" class="w-9 h-9 rounded-xl bg-industrial-800 hover:bg-industrial-700 text-gray-300 hover:text-white flex items-center justify-center">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Login View (Shown if not authenticated) -->
+            <div id="admin-login-view" class="py-12 max-w-md mx-auto text-center space-y-6">
+                <div class="w-16 h-16 rounded-2xl bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400 text-2xl mx-auto">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white">Admin Authentication Required</h4>
+                    <p class="text-xs text-gray-400 mt-1">Enter your secure administrator passcode to access orders, career applications, and product showcase manager.</p>
+                </div>
+                <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                    <input type="password" id="admin-passcode-input" required placeholder="Enter Admin Passcode" class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-center tracking-widest text-lg font-bold focus:outline-none focus:border-gold-500">
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-industrial-900 font-bold text-sm transition-all shadow-md">
+                        Unlock Admin Portal
+                    </button>
+                </form>
+            </div>
+
+            <!-- Dashboard View (Shown after successful login) -->
+            <div id="admin-dashboard-view" class="py-6 space-y-8 hidden">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="p-4 rounded-xl bg-industrial-950 border border-industrial-800">
+                        <span class="text-xs text-gray-400 uppercase tracking-wider block">Total Orders / Inquiries</span>
+                        <span class="text-2xl font-black text-gold-400 mt-1" id="admin-total-orders">0</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-industrial-950 border border-industrial-800">
+                        <span class="text-xs text-gray-400 uppercase tracking-wider block">Career Applications</span>
+                        <span class="text-2xl font-black text-blue-400 mt-1" id="admin-total-careers">0</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-industrial-950 border border-industrial-800">
+                        <span class="text-xs text-gray-400 uppercase tracking-wider block">Security Status</span>
+                        <span class="text-sm font-bold text-gold-400 mt-2 block flex items-center space-x-1">
+                            <i class="fa-solid fa-circle-check text-xs"></i>
+                            <span>Admin Locked & Secure</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Password Change Section -->
+                <div class="p-6 rounded-2xl bg-industrial-950 border border-industrial-800 space-y-4">
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-gold-400 flex items-center space-x-2">
+                        <i class="fa-solid fa-key"></i>
+                        <span>Change Admin Password</span>
+                    </h4>
+                    <form onsubmit="handlePasswordChange(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-end">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">New Password (8 chars & strong)</label>
+                            <input type="password" id="new-admin-pwd" required placeholder="Exactly 8 characters" class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full py-3.5 rounded-xl bg-industrial-900 hover:bg-gold-500 hover:text-industrial-900 border border-gold-500/40 text-gold-400 font-bold text-xs transition-all">
+                                Update Password
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Recent Products Showcase Manager (With Gallery Photo Picker) -->
+                <div class="p-6 rounded-2xl bg-industrial-950 border border-industrial-800 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-sm font-bold uppercase tracking-wider text-gold-400 flex items-center space-x-2">
+                            <i class="fa-solid fa-images"></i>
+                            <span>Showcase Recent Product Picture</span>
+                        </h4>
+                        <span class="text-xs text-gray-400">Instantly publishes to public showcase</span>
+                    </div>
+                    <form onsubmit="handleAddGalleryItem(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Product Title</label>
+                            <input type="text" id="gallery-title" required placeholder="e.g. Ornate Double Swing Gate" class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Choose Photo from Gallery</label>
+                            <input type="file" id="gallery-file" accept="image/*" required class="w-full text-xs text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-industrial-900 file:text-gold-400 hover:file:bg-gold-500 hover:file:text-industrial-900 file:transition-all cursor-pointer">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Price / Estimate (UGX)</label>
+                            <input type="text" id="gallery-price" required placeholder="e.g. UGX 950,000" class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Brief Description</label>
+                            <input type="text" id="gallery-desc" required placeholder="Heavy gauge steel with anti-rust gold accents..." class="w-full px-4 py-3.5 rounded-xl bg-industrial-900 border border-industrial-700 text-white text-sm focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <button type="submit" class="w-full py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-industrial-900 font-bold text-sm transition-all shadow-md">
+                                Publish Product Picture to Live Showcase
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Existing Gallery Manager List -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Currently Published Showcase Items</h4>
+                    <div id="admin-gallery-list" class="space-y-2">
+                        <!-- Populated via JS -->
+                    </div>
+                </div>
+
+                <!-- Submitted Career Applications List -->
+                <div class="space-y-4 pt-4 border-t border-industrial-800">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-sm font-bold uppercase tracking-wider text-gold-400">Submitted Career Applications</h4>
+                        <button onclick="clearCareers()" class="text-xs px-3 py-1.5 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 hover:bg-red-500/20 transition-all">Clear All Applications</button>
+                    </div>
+                    <div id="careers-list-container" class="space-y-3">
+                        <!-- Populated via JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Submitted Client Orders -->
+                <div class="space-y-4 pt-4 border-t border-industrial-800">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-sm font-bold uppercase tracking-wider text-gold-400">Submitted Client Orders & Custom Quotes</h4>
+                        <button onclick="clearOrders()" class="text-xs px-3 py-1.5 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 hover:bg-red-500/20 transition-all">Clear All Orders</button>
+                    </div>
+                    <div id="orders-list-container" class="space-y-3">
+                        <!-- Populated via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Modal -->
+    <div id="toast-modal" class="fixed bottom-6 right-6 z-50 bg-industrial-950 border-2 border-gold-500 rounded-2xl p-4 shadow-2xl hidden max-w-md transform translate-y-20 opacity-0 transition-all duration-300">
+        <div class="flex items-start space-x-3">
+            <div class="w-8 h-8 rounded-lg bg-gold-500 text-industrial-900 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <div>
+                <h4 id="toast-title" class="text-sm font-bold text-white">Success</h4>
+                <p id="toast-message" class="text-xs text-gray-300 mt-0.5">Operation completed successfully.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-industrial-950 border-t border-industrial-800 py-12 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center text-industrial-900 font-black">
+                            <i class="fa-solid fa-fire-flame-curved text-sm"></i>
+                        </div>
+                        <span class="text-lg font-black uppercase text-white tracking-wider">Green Candles Engineering Co. Ltd</span>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-md leading-relaxed">
+                        Founded by Govt Trader. Master fabricators of high-end windows, doors, railings, gates, and burglar proofing ('buglers') engineered for absolute security and unmatched visual elegance in Uganda and beyond.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-gold-400 uppercase tracking-wider mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#catalog" class="hover:text-white transition-colors">Product Catalog</a></li>
+                        <li><a href="#showcase" class="hover:text-white transition-colors">Recent Showcase</a></li>
+                        <li><a href="#wizard" class="hover:text-white transition-colors">Quote Estimator</a></li>
+                        <li><a href="#careers" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact Hub</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-gold-400 uppercase tracking-wider mb-4">Direct Lines</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="tel:+256757053424" class="hover:text-gold-400 transition-colors">+256 757 053424</a></li>
+                        <li><a href="tel:+256779525875" class="hover:text-gold-400 transition-colors">+256 779 525875 (WhatsApp)</a></li>
+                        <li class="pt-2 text-xs text-gray-500">Kampala, Uganda</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-industrial-800 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+                <p>&copy; 2026 Green Candles Engineering Company Limited[cite: 3]. Founder: Govt Trader. All rights reserved.</p>
+                <p class="mt-2 sm:mt-0 flex items-center space-x-1">
+                    <i class="fa-solid fa-shield-halved text-gold-500"></i>
+                    <span>Secured with Green Shield XSS Protection</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark / Light Mode Toggle Helper
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('light-mode');
+            const isLight = body.classList.contains('light-mode');
+            localStorage.setItem('green_candles_theme', isLight ? 'light' : 'dark');
+            updateThemeIcons(isLight);
+            showToast('Theme Updated', isLight ? 'Switched to Light Mode.' : 'Switched to Dark Mode.');
+        }
+
+        function updateThemeIcons(isLight) {
+            const icon1 = document.getElementById('theme-icon');
+            const icon2 = document.getElementById('theme-icon-mobile');
+            if (isLight) {
+                if(icon1) icon1.className = "fa-solid fa-moon";
+                if(icon2) icon2.className = "fa-solid fa-moon";
+            } else {
+                if(icon1) icon1.className = "fa-solid fa-sun";
+                if(icon2) icon2.className = "fa-solid fa-sun";
+            }
+        }
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem('green_candles_theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+                updateThemeIcons(true);
+            } else {
+                updateThemeIcons(false);
+            }
+        }
+
+        // Password management helper (Default PIN: 98050)
+        function getAdminPassword() {
+            return localStorage.getItem('green_candles_admin_pwd') || '98050';
+        }
+        function setAdminPassword(pwd) {
+            localStorage.setItem('green_candles_admin_pwd', pwd);
+        }
+
+        function handlePasswordChange(e) {
+            e.preventDefault();
+            const newPwd = document.getElementById('new-admin-pwd').value;
+            if (newPwd.length !== 8) {
+                showToast('Invalid Password', 'Password must have exactly 8 characters as required.');
+                return;
+            }
+            const isStrong = /[A-Za-z]/.test(newPwd) && /[0-9]/.test(newPwd);
+            if (!isStrong) {
+                showToast('Weak Password', 'Password must be strong (include both letters and numbers).');
+                return;
+            }
+            setAdminPassword(newPwd);
+            document.getElementById('new-admin-pwd').value = '';
+            showToast('Password Updated', 'Admin password changed successfully.');
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Catalog Filtering
+        function filterCatalog(category) {
+            const buttons = document.querySelectorAll('.catalog-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-gold-500', 'text-industrial-900');
+                btn.classList.add('bg-industrial-950', 'text-gray-300');
+            });
+            event.target.classList.remove('bg-industrial-950', 'text-gray-300');
+            event.target.classList.add('bg-gold-500', 'text-industrial-900');
+
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Pre-select role in careers form
+        function selectCareerRole(roleTitle) {
+            document.getElementById('applicant-position').value = roleTitle;
+            showToast('Position Selected', `Applying for ${roleTitle}. Fill in your details below.`);
+        }
+
+        // Pre-select product in wizard from catalog or showcase
+        function selectProductForWizard(productName, priceVal) {
+            const select = document.getElementById('wizard-product');
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].text.includes(productName) || select.options[i].value === productName) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
+            calculateEstimate();
+            const wizardElement = document.getElementById('wizard');
+            wizardElement.scrollIntoView({ behavior: 'smooth' });
+            showToast('Selected in Estimator', `Configuring custom estimate for ${productName}.`);
+        }
+
+        function orderShowcaseItem(title, priceStr) {
+            const notesInput = document.getElementById('wizard-notes');
+            notesInput.value = `Ordering Showcase Masterpiece: "${title}" (Priced around ${priceStr})`;
+            const wizardElement = document.getElementById('wizard');
+            wizardElement.scrollIntoView({ behavior: 'smooth' });
+            showToast('Showcase Product Loaded', `Ready to order "${title}". Fill in your details below.`);
+        }
+
+        // Calculate Estimate Real-time
+        function calculateEstimate() {
+            const product = document.getElementById('wizard-product').value;
+            const width = parseFloat(document.getElementById('wizard-width').value) || 1;
+            const height = parseFloat(document.getElementById('wizard-height').value) || 1;
+            const gaugeMultiplier = parseFloat(document.getElementById('wizard-gauge').value) || 1;
+            const finishMultiplier = parseFloat(document.getElementById('wizard-finish').value) || 1;
+
+            let baseRate = 200000;
+            if (product === 'Gates') baseRate = 350000;
+            if (product === 'Doors') baseRate = 300000;
+            if (product === 'Windows') baseRate = 220000;
+            if (product === 'Railings') baseRate = 180000;
+            if (product === 'Burglar Proofing') baseRate = 160000;
+            if (product === 'Custom Structural Steel') baseRate = 450000;
+
+            const area = width * height;
+            const total = area * baseRate * gaugeMultiplier * finishMultiplier;
+
+            const formatted = new Intl.NumberFormat('en-UG', { style: 'currency', currency: 'UGX', maximumFractionDigits: 0 }).format(total);
+            document.getElementById('estimated-price-display').innerText = formatted;
+            return total;
+        }
+
+        // Input Sanitization against XSS
+        function sanitizeInput(str) {
+            if (!str) return '';
+            return str.replace(/&/g, "&amp;")
+                      .replace(/</g, "&lt;")
+                      .replace(/>/g, "&gt;")
+                      .replace(/"/g, "&quot;")
+                      .replace(/'/g, "&#039;");
+        }
+
+        // Storage helpers
+        function getOrders() {
+            try {
+                const stored = localStorage.getItem('green_candles_orders');
+                return stored ? JSON.parse(stored) : [];
+            } catch (e) { return []; }
+        }
+        function saveOrders(orders) {
+            localStorage.setItem('green_candles_orders', JSON.stringify(orders));
+        }
+
+        function getCareers() {
+            try {
+                const stored = localStorage.getItem('green_candles_careers');
+                return stored ? JSON.parse(stored) : [];
+            } catch (e) { return []; }
+        }
+        function saveCareers(careers) {
+            localStorage.setItem('green_candles_careers', JSON.stringify(careers));
+        }
+
+        function getGalleryItems() {
+            try {
+                const stored = localStorage.getItem('green_candles_gallery');
+                if (stored) return JSON.parse(stored);
+            } catch (e) {}
+            return [
+                { id: 'GAL-1', title: 'Executive Motorized Gate', img: 'https://images.unsplash.com/photo-1558441117-49d10a9bb5f5?auto=format&fit=crop&w=800&q=80', price: 'UGX 1,250,000', desc: 'Heavy structural steel with matte black finish and automated motor readiness.' },
+                { id: 'GAL-2', title: 'Modern Villa Casement Window', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', price: 'UGX 550,000', desc: 'Slim-profile steel frames with integrated decorative burglar proofing bars.' },
+                { id: 'GAL-3', title: 'Ornate Balcony Railing', img: 'https://images.unsplash.com/photo-1541888946425-d0fbb18f86f8?auto=format&fit=crop&w=800&q=80', price: 'UGX 400,000', desc: 'Custom forged scrollwork railing with antique bronze accent coating.' }
+            ];
+        }
+        function saveGalleryItems(items) {
+            localStorage.setItem('green_candles_gallery', JSON.stringify(items));
+        }
+
+        // Render Public Showcase
+        function renderPublicShowcase() {
+            const items = getGalleryItems();
+            const container = document.getElementById('public-showcase-grid');
+            if (!container) return;
+
+            if (items.length === 0) {
+                container.innerHTML = `<div class="col-span-3 text-center py-10 text-gray-500 text-sm">No recent product pictures showcased yet. Check back soon or visit the admin portal.</div>`;
+                return;
+            }
+
+            container.innerHTML = items.map(item => `
+                <div class="group rounded-2xl bg-industrial-950 border border-industrial-700 overflow-hidden hover:border-gold-500/60 transition-all flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="${sanitizeInput(item.img)}" alt="${sanitizeInput(item.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-industrial-900/85 backdrop-blur-md px-3 py-1 rounded-lg border border-gold-500/30 text-gold-400 text-xs font-bold">
+                            ${sanitizeInput(item.price)}
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">${sanitizeInput(item.title)}</h3>
+                            <p class="text-gray-400 text-sm mb-6">${sanitizeInput(item.desc)}</p>
+                        </div>
+                        <button onclick="orderShowcaseItem('${sanitizeInput(item.title)}', '${sanitizeInput(item.price)}')" class="w-full py-3 rounded-xl bg-industrial-900 hover:bg-gold-500 hover:text-industrial-900 border border-gold-500/40 text-gold-400 font-bold text-sm transition-all flex items-center justify-center space-x-2">
+                            <span>Order This Product</span>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Handle Career Application Submission (Instantly updates Admin Dashboard if open)
+        function handleCareerSubmission(e) {
+            e.preventDefault();
+            const name = sanitizeInput(document.getElementById('applicant-name').value);
+            const phone = sanitizeInput(document.getElementById('applicant-phone').value);
+            const position = sanitizeInput(document.getElementById('applicant-position').value);
+            const email = sanitizeInput(document.getElementById('applicant-email').value);
+            const cover = sanitizeInput(document.getElementById('applicant-cover').value);
+
+            const newApp = {
+                id: 'JOB-' + Math.floor(100000 + Math.random() * 900000),
+                date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                name,
+                phone,
+                position,
+                email,
+                cover,
+                status: 'Under Review'
+            };
+
+            const careers = getCareers();
+            careers.unshift(newApp);
+            saveCareers(careers);
+
+            const dashboardView = document.getElementById('admin-dashboard-view');
+            if (dashboardView && !dashboardView.classList.contains('hidden')) {
+                renderAdminCareers();
+            }
+
+            showToast('Application Submitted!', `Application ID ${newApp.id} received by Engineering HR.`);
+            e.target.reset();
+        }
+
+        // Handle Order Submission
+        function handleOrderSubmission(e) {
+            e.preventDefault();
+            const product = sanitizeInput(document.getElementById('wizard-product').value);
+            const width = sanitizeInput(document.getElementById('wizard-width').value);
+            const height = sanitizeInput(document.getElementById('wizard-height').value);
+            const gauge = sanitizeInput(document.getElementById('wizard-gauge').selectedOptions[0].text);
+            const finish = sanitizeInput(document.getElementById('wizard-finish').selectedOptions[0].text);
+            const notes = sanitizeInput(document.getElementById('wizard-notes').value);
+            const name = sanitizeInput(document.getElementById('client-name').value);
+            const phone = sanitizeInput(document.getElementById('client-phone').value);
+            const price = document.getElementById('estimated-price-display').innerText;
+
+            const newOrder = {
+                id: 'GC-' + Math.floor(100000 + Math.random() * 900000),
+                date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                product,
+                dimensions: `${width}m x ${height}m`,
+                gauge,
+                finish,
+                notes: notes || 'None',
+                name,
+                phone,
+                price,
+                status: 'Pending Site Inspection'
+            };
+
+            const orders = getOrders();
+            orders.unshift(newOrder);
+            saveOrders(orders);
+
+            const dashboardView = document.getElementById('admin-dashboard-view');
+            if (dashboardView && !dashboardView.classList.contains('hidden')) {
+                renderAdminOrders();
+            }
+
+            showToast('Order Successfully Dispatched!', `Order ID ${newOrder.id} sent to Govt Trader & Engineering Desk.`);
+            document.getElementById('quote-form').reset();
+            calculateEstimate();
+        }
+
+        // Handle Direct Message
+        function handleDirectMessage(e) {
+            e.preventDefault();
+            const name = sanitizeInput(document.getElementById('dm-name').value);
+            const phone = sanitizeInput(document.getElementById('dm-phone').value);
+            const msg = sanitizeInput(document.getElementById('dm-msg').value);
+
+            const newOrder = {
+                id: 'DM-' + Math.floor(100000 + Math.random() * 900000),
+                date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                product: 'Direct Inquiry',
+                dimensions: 'N/A',
+                gauge: 'Standard',
+                finish: 'Standard',
+                notes: msg,
+                name,
+                phone,
+                price: 'Negotiable',
+                status: 'New Inquiry'
+            };
+
+            const orders = getOrders();
+            orders.unshift(newOrder);
+            saveOrders(orders);
+
+            const dashboardView = document.getElementById('admin-dashboard-view');
+            if (dashboardView && !dashboardView.classList.contains('hidden')) {
+                renderAdminOrders();
+            }
+
+            showToast('Inquiry Sent!', 'Our technical team will call you shortly.');
+            e.target.reset();
+        }
+
+        // Toast Notification Function
+        function showToast(title, message) {
+            const toast = document.getElementById('toast-modal');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-message').innerText = message;
+            toast.classList.remove('hidden', 'translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+                setTimeout(() => toast.classList.add('hidden'), 300);
+            }, 4000);
+        }
+
+        // Admin Authentication & Modal Controls
+        function openAdminModal() {
+            const modal = document.getElementById('admin-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+
+            if (sessionStorage.getItem('admin_authenticated') === 'true') {
+                document.getElementById('admin-login-view').classList.add('hidden');
+                document.getElementById('admin-dashboard-view').classList.remove('hidden');
+                renderAdminDashboard();
+            } else {
+                document.getElementById('admin-login-view').classList.remove('hidden');
+                document.getElementById('admin-dashboard-view').classList.add('hidden');
+            }
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const passcode = document.getElementById('admin-passcode-input').value;
+            const currentAdminPwd = getAdminPassword();
+
+            if (passcode === currentAdminPwd) {
+                sessionStorage.setItem('admin_authenticated', 'true');
+                document.getElementById('admin-login-view').classList.add('hidden');
+                document.getElementById('admin-dashboard-view').classList.remove('hidden');
+                renderAdminDashboard();
+                showToast('Welcome Admin', 'Authenticated successfully as Govt Trader.');
+            } else {
+                showToast('Access Denied', 'Incorrect admin passcode.');
+            }
+            document.getElementById('admin-passcode-input').value = '';
+        }
+
+        function closeAdminModal() {
+            const modal = document.getElementById('admin-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        function renderAdminDashboard() {
+            renderAdminOrders();
+            renderAdminCareers();
+            renderAdminGalleryList();
+        }
+
+        function handleAddGalleryItem(e) {
+            e.preventDefault();
+            const title = sanitizeInput(document.getElementById('gallery-title').value);
+            const price = sanitizeInput(document.getElementById('gallery-price').value);
+            const desc = sanitizeInput(document.getElementById('gallery-desc').value);
+            const fileInput = document.getElementById('gallery-file');
+
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const imgDataUrl = event.target.result;
+                    const items = getGalleryItems();
+                    items.unshift({
+                        id: 'GAL-' + Date.now(),
+                        title,
+                        img: imgDataUrl,
+                        price,
+                        desc
+                    });
+                    saveGalleryItems(items);
+                    renderAdminGalleryList();
+                    renderPublicShowcase();
+
+                    e.target.reset();
+                    showToast('Published!', 'New product picture chosen and added to live website showcase.');
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                showToast('Error', 'Please choose an image file from your gallery.');
+            }
+        }
+
+        function deleteGalleryItem(index) {
+            const items = getGalleryItems();
+            items.splice(index, 1);
+            saveGalleryItems(items);
+            renderAdminGalleryList();
+            renderPublicShowcase();
+            showToast('Removed', 'Product removed from showcase.');
+        }
+
+        function renderAdminGalleryList() {
+            const items = getGalleryItems();
+            const container = document.getElementById('admin-gallery-list');
+            if (items.length === 0) {
+                container.innerHTML = `<div class="text-xs text-gray-500 py-2">No showcase items currently published.</div>`;
+                return;
+            }
+
+            container.innerHTML = items.map((item, idx) => `
+                <div class="flex items-center justify-between p-3 rounded-xl bg-industrial-950 border border-industrial-800 text-xs">
+                    <div class="flex items-center space-x-3">
+                        <img src="${item.img}" class="w-10 h-10 object-cover rounded-lg border border-industrial-700" alt="">
+                        <div>
+                            <strong class="text-white block">${sanitizeInput(item.title)}</strong>
+                            <span class="text-gold-400">${sanitizeInput(item.price)}</span>
+                        </div>
+                    </div>
+                    <button onclick="deleteGalleryItem(${idx})" class="px-2.5 py-1 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/30">Delete</button>
+                </div>
+            `).join('');
+        }
+
+        function renderAdminCareers() {
+            const careers = getCareers();
+            document.getElementById('admin-total-careers').innerText = careers.length;
+
+            const container = document.getElementById('careers-list-container');
+            if (careers.length === 0) {
+                container.innerHTML = `<div class="p-6 text-center text-gray-500 rounded-xl bg-industrial-950 border border-industrial-800 text-sm">No job applications submitted yet.</div>`;
+                return;
+            }
+
+            container.innerHTML = careers.map((c, idx) => `
+                <div class="p-4 rounded-xl bg-industrial-950 border border-industrial-800 space-y-2">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-industrial-800 text-xs">
+                        <span class="font-bold text-blue-400">${c.id} • ${c.date}</span>
+                        <div class="flex items-center space-x-2">
+                            <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/30">${c.position}</span>
+                            <button onclick="deleteCareer(${idx})" class="text-red-400 hover:text-red-300 p-1"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        <div>
+                            <span class="text-gray-500 block">Applicant:</span>
+                            <strong class="text-white">${sanitizeInput(c.name)} (${sanitizeInput(c.phone)})</strong>
+                        </div>
+                        <div>
+                            <span class="text-gray-500 block">Email:</span>
+                            <span class="text-gray-300">${sanitizeInput(c.email)}</span>
+                        </div>
+                    </div>
+                    <div class="text-xs text-gray-400 bg-industrial-900 p-2.5 rounded-lg border border-industrial-800">
+                        <strong>Cover Note:</strong> ${sanitizeInput(c.cover)}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function deleteCareer(index) {
+            const careers = getCareers();
+            careers.splice(index, 1);
+            saveCareers(careers);
+            renderAdminCareers();
+            showToast('Deleted', 'Application removed.');
+        }
+
+        function clearCareers() {
+            localStorage.removeItem('green_candles_careers');
+            renderAdminCareers();
+            showToast('Cleared', 'All career applications cleared.');
+        }
+
+        function renderAdminOrders() {
+            const orders = getOrders();
+            document.getElementById('admin-total-orders').innerText = orders.length;
+
+            const container = document.getElementById('orders-list-container');
+            if (orders.length === 0) {
+                container.innerHTML = `<div class="p-6 text-center text-gray-500 rounded-xl bg-industrial-950 border border-industrial-800 text-sm">No orders or inquiries submitted yet.</div>`;
+                return;
+            }
+
+            container.innerHTML = orders.map((o, idx) => `
+                <div class="p-4 rounded-xl bg-industrial-950 border border-industrial-800 space-y-3">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-industrial-800 text-xs">
+                        <span class="font-bold text-gold-400">${o.id} • ${o.date}</span>
+                        <div class="flex items-center space-x-2">
+                            <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30">${o.status}</span>
+                            <button onclick="updateOrderStatus(${idx})" class="px-2 py-0.5 rounded bg-industrial-900 text-gray-300 hover:text-white">Toggle Status</button>
+                            <button onclick="deleteOrder(${idx})" class="text-red-400 hover:text-red-300 p-1"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                        <div>
+                            <span class="text-gray-500 block">Client:</span>
+                            <strong class="text-white">${sanitizeInput(o.name)} (${sanitizeInput(o.phone)})</strong>
+                        </div>
+                        <div>
+                            <span class="text-gray-500 block">Product & Spec:</span>
+                            <span class="text-gray-300">${sanitizeInput(o.product)} (${sanitizeInput(o.dimensions)})</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500 block">Est. Price:</span>
+                            <strong class="text-gold-400">${sanitizeInput(o.price)}</strong>
+                        </div>
+                    </div>
+                    <div class="text-xs text-gray-400 bg-industrial-900 p-2.5 rounded-lg border border-industrial-800">
+                        <strong>Notes/Style:</strong> ${sanitizeInput(o.notes)}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateOrderStatus(index) {
+            const orders = getOrders();
+            if (orders[index].status === 'Pending Site Inspection') {
+                orders[index].status = 'Fabrication in Progress';
+            } else if (orders[index].status === 'Fabrication in Progress') {
+                orders[index].status = 'Ready for Installation';
+            } else if (orders[index].status === 'Ready for Installation') {
+                orders[index].status = 'Delivered & Satisfied';
+            } else {
+                orders[index].status = 'Pending Site Inspection';
+            }
+            saveOrders(orders);
+            renderAdminOrders();
+            showToast('Status Updated', 'Order status modified successfully.');
+        }
+
+        function deleteOrder(index) {
+            const orders = getOrders();
+            orders.splice(index, 1);
+            saveOrders(orders);
+            renderAdminOrders();
+            showToast('Deleted', 'Order removed from registry.');
+        }
+
+        function clearOrders() {
+            localStorage.removeItem('green_candles_orders');
+            renderAdminOrders();
+            showToast('Registry Cleared', 'All orders and inquiries cleared.');
+        }
+
+        // Initialize calculation, theme & public showcase on load
+        window.onload = function() {
+            initTheme();
+            calculateEstimate();
+            renderPublicShowcase();
+        };
+    </script>
+</body>
+</html>
